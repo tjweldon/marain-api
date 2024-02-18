@@ -30,9 +30,9 @@ impl From<DateTime<Utc>> for Timestamp {
 
 #[derive(Serialize, Deserialize, PartialEq, Eq)]
 pub struct ClientMsg {
-    token: Option<String>,
-    body: ClientMsgBody,
-    timestamp: Timestamp,
+    pub token: Option<String>,
+    pub body: ClientMsgBody,
+    pub timestamp: Timestamp,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Eq)]
@@ -44,9 +44,9 @@ pub enum Status {
 
 #[derive(Serialize, Deserialize, PartialEq, Eq)]
 pub struct ChatMsg {
-    sender: String,
-    timestamp: u32,
-    content: String,
+    pub sender: String,
+    pub timestamp: u32,
+    pub content: String,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Eq)]
@@ -68,7 +68,7 @@ pub enum ServerMsgBody {
 
 #[derive(Serialize, Deserialize, PartialEq, Eq)]
 pub struct ServerMsg {
-    status: Status,
-    timestamp: Timestamp,
-    body: ServerMsgBody,
+    pub status: Status,
+    pub timestamp: Timestamp,
+    pub body: ServerMsgBody,
 }
