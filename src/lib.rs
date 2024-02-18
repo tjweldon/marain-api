@@ -1,6 +1,6 @@
 mod messages;
 
-mod prelude {
+pub mod prelude {
     #[allow(unused_imports)]
     pub use super::messages::*;
 }
