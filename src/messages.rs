@@ -45,7 +45,7 @@ pub enum Status {
 #[derive(Serialize, Deserialize, PartialEq, Eq, Clone)]
 pub struct ChatMsg {
     pub sender: String,
-    pub timestamp: u32,
+    pub timestamp: Timestamp,
     pub content: String,
 }
 
