@@ -61,6 +61,7 @@ pub enum ServerMsgBody {
         occupants: Vec<String>,
     },
     ChatRecv {
+        sender: String,
         direct: bool,
         chat_msg: ChatMsg,
     },
