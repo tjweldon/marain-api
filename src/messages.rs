@@ -8,6 +8,7 @@ pub enum ClientMsgBody {
     SendToUser { contents: String, to: String },
     Move { target: String },
     QueryRoom,
+    GetTime,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Eq, Clone)]
