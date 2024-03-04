@@ -1,14 +1,16 @@
 use chrono::{DateTime, LocalResult, TimeZone, Utc};
 use serde::{Deserialize, Serialize};
 
+type Key = [u8; 32];
+
 #[derive(Serialize, Deserialize, PartialEq, Eq, Clone, Debug, Hash)]
 pub enum ClientMsgBody {
-    Login(String),
+    Login(String, Key),
     SendToRoom { contents: String },
     SendToUser { contents: String, to: String },
     Move { target: String },
     QueryRoom,
-    GetTime
+    GetTime,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Eq, Clone, Debug, Hash)]
@@ -55,6 +57,7 @@ pub enum ServerMsgBody {
     Empty,
     LoginSuccess {
         token: String,
+        public_key: Key,
     },
     RoomData {
         query_ts: Timestamp,
