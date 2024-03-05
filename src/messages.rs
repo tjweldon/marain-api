@@ -1,7 +1,7 @@
 use chrono::{DateTime, LocalResult, TimeZone, Utc};
 use serde::{Deserialize, Serialize};
 
-type Key = [u8; 32];
+pub type Key = [u8; 32];
 
 #[derive(Serialize, Deserialize, PartialEq, Eq, Clone, Debug, Hash)]
 pub enum ClientMsgBody {
