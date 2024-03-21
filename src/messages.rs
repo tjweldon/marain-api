@@ -68,6 +68,9 @@ pub enum ServerMsgBody {
         direct: bool,
         chat_msg: ChatMsg,
     },
+    Notification {
+        body: String
+    }
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Eq, Clone, Debug, Hash)]
