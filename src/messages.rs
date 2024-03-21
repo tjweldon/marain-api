@@ -60,6 +60,7 @@ pub enum ServerMsgBody {
         public_key: Key,
     },
     RoomData {
+        room_name: String,
         query_ts: Timestamp,
         logs: Vec<ChatMsg>,
         occupants: Vec<String>,
