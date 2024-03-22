@@ -53,6 +53,13 @@ pub struct ChatMsg {
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Eq, Clone, Debug, Hash)]
+pub struct Notification {
+    pub sender: String,
+    pub timestamp: Timestamp,
+    pub content: String,
+}
+
+#[derive(Serialize, Deserialize, PartialEq, Eq, Clone, Debug, Hash)]
 pub enum ServerMsgBody {
     Empty,
     LoginSuccess {
@@ -63,6 +70,7 @@ pub enum ServerMsgBody {
         room_name: String,
         query_ts: Timestamp,
         logs: Vec<ChatMsg>,
+        notifications: Vec<Notification>,
         occupants: Vec<String>,
     },
     ChatRecv {
